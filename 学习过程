@@ -1,1 +1,1262 @@
 
+#include<stdio.h>
+struct s
+{
+    char *ps;
+};
+int main()
+{
+    char a[]="bit hello";
+    struct s sp={a};
+    printf("%c\n",a[0]);
+    printf("%s\n",sp.ps);
+    return 0;
+}
+/*#include<stdio.h>
+#include<string.h>
+void ni(char a[],int sz,int i)
+{
+
+    char temp;
+    temp=a[i];
+    a[i]=a[sz-1];
+    a[sz-1]=temp;
+    i++;
+    if(i+1<sz-2)
+    ni(a,sz-2,i+1);
+
+}
+int main()
+{
+    char a[]="abcdef";
+    int sz =strlen(a);
+    int i=0;
+    ni(a,sz,i);
+    for(int i=0;i<sz;i++)
+    {
+        printf("%c",a[i]);
+    }
+    return 0;
+}*/
+/*#include<stdio.h>
+void count_1(int n)
+{
+    if(n>9)
+    count_1(n/10);
+    printf("%d\n",n%10);
+}*/
+/*void count_1(int n)
+{
+    int i =30;
+    int j=31;
+    for(i=30;i>=0;i=i-2)
+    {
+        printf("%d ",(n>>i)&1);
+    }
+    printf("\n");
+    for(j=31;j>=1;j=j-2)
+    {
+        printf("%d ",(n>>j)&1);
+    }
+    //while(n!=0)
+    //{
+       // n=n&(n-1);
+        //count++;
+    //};
+}*/
+/*int main()
+{
+    int n;
+    scanf("%d",&n);
+    count_1(n);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int i;
+    printf("%d",i);
+    return 0;
+}*/
+/*#include<stdio.h>
+int shun(int n)
+{
+    if(n>4)
+        return shun(n-1)+shun(n-3);
+    else
+        {
+           if(n==1)
+                return 1;
+           if(n==2)
+            return 2;
+           if(n==3)
+            return 3;
+           if(n==4)
+            return 4;
+        }
+}
+int main()
+{
+    int n[10];
+    int shu;
+    int i;
+    for(i=0;i<10;i++)
+    {
+    scanf("%d",&n[i]);
+    if(n[i]==0)
+    {
+        break;
+    }
+    }
+    for(i=0;n[i]!=0;i++)
+    {
+        shu=shun(n[i]);
+        printf("%d\n",shu);
+    }
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a=10;
+    int b=20;
+    int c=30;
+    int* arr[3]={&a,&b,&c};
+    for(int i=0;i<3;i++)
+    {
+        printf("%d\n",*(arr[i]));
+    }
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a=10;
+    int*p=&a;
+    int**ppa=&p;
+    int***pppa=&ppa;
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a[10]={0};
+    printf("%p\n",a+1);
+    printf("%p\n",(&a[0])g+1);
+    printf("%p\n",(&a)+1);
+    return 0;
+}*/
+/*#include<stdio.h>
+int my_strlen(char *str)
+{
+    int len;ny
+    char* start =str;
+    char* end=str;
+    printf("%p\n",str);
+    printf("%p\n",end);
+    while(*end!='\0')
+    {
+        end++;
+    }
+    len=end-start;
+    //for( len=0;*str!='\0';len++)
+    //{
+        //str++;
+    //}
+    return len;
+}
+int main()
+{
+    char a[]="bit";
+    int len=my_strlen(a);
+    printf("%d\n",len);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    char ch[5]={0};
+    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+    printf("%d\n",&arr[9]-&arr[0]);
+    printf("%d\n",&ch[4]-&ch[0]);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+    int *p=arr;
+    int sz=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<sz;i++)
+    {
+        printf("%d\n",*p);
+        p+=1;
+    }
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a=0x11223344;
+    int* pa=&a;
+    char* pc =&a;
+    printf("%p\n",pa);
+    printf("%p\n",pa+1);
+    printf("%p\n",pc);
+    printf("%p\n",pc+1);
+
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a= 0x11223344;
+    int* pa=&a;
+    char* pc=&a;
+    printf("%p\n",pa);
+    printf("%p\n",pc);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    char a=3;
+    char b=127;
+    int c=a +b;
+    printf("%d",c);
+    return 0;
+}*/
+/*#include<stdio.h>
+struct Student
+{
+    char name[20];
+    int age;
+    char id[20];
+};
+int main()
+{
+    typedef struct Student str_S;
+    str_S s1={"sdfsdfs",20,"21010120"};
+    str_S* p=&s1;
+    printf("%s\n",(*p).name);
+    printf("%s\n",p->name);
+    printf("%s\n",s1.name);
+    printf("%s\n",s1.id);
+    printf("%d\n",s1.age);
+    return 0;
+}*/
+/*#include<stdio.h>
+int get_max(int x,int y)
+{
+    return (x>y ? x:y);
+
+}
+int main()
+{
+    int a=10,b=20;
+    int max=get_max(a,b);
+    printf("max = %d\n",max);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a=0;
+    int i=++a;
+    printf("%d %d",a,i);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    return 0;
+}*/
+/*#include<stdio.h>
+void r(int *p)
+{
+    *p+=1;
+}
+int main()
+{
+    int a=10;
+    int *p=&a;
+    r(p);
+    printf("%d\n",a);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a= 0;
+    if(a)
+    {
+        printf("hehe\n");
+    }
+    if(!a)
+    {
+       printf("hehe\n");
+    }
+    //printf("%d\n",!a);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int num;
+    int count =0;
+    scanf("%d",&num);
+    for(int i=0;i<32;i++)
+    {
+        if(((num>>i)&1)==1)
+            count ++;
+    }
+    printf("%d\n",count);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int num;
+    int count=0;
+    scanf("%d",&num);
+    while(num>0)
+    {
+        if(num%2==1)
+        {
+            count ++;
+        }
+        num=num/2;
+    }
+    printf("%d\n",count);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a=1;
+    int b=2;
+    a=a-b;
+    b=a+b;
+    a=b-a;
+    printf("%d %d",a,b);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a=5;
+    int b=a <<1;
+    printf("%d\n",b);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    double a=5.0/2;
+    printf("%lf",a);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int arr[10];
+    for(int i=0;i<10;i++)
+    scanf("%d",&arr[i]);
+    for(int i=0;i<10;i++)
+    printf("%d ",arr[i]);
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int a,b,x,y,z,i;
+    scanf("%d%d%d",&x,&y,&z);
+    for(i=0;i<3;i++)
+    {
+        if(x>y)
+        {
+            a=x;
+            x=y;
+            y=a;
+        }
+        if(y>z)
+        {
+            b=y;
+            y=z;
+            z=b;
+        }
+    }
+    printf("%d %d %d\n",x,y,z);
+    return 0;
+}*/
+//#include<stdio.h>
+/*int main()
+{
+    int arr[22];
+    scanf("%d",&arr);
+    printf("%d\n",arr[0]);
+    printf("%d\n",arr[1]);
+    printf("%d\n",arr[2]);
+    printf("%d\n",arr[3]);
+    return 0;
+}*/
+//int main()
+//{
+
+    //return 0;
+//}
+/*int main()
+{
+    int arr[20];
+    scanf("%d",&arr[0]);
+    printf("%p\n",arr);
+    return 0;
+}*/
+/*void p(int a[],int z)
+{
+    int c = z;
+    int b;
+    int h=0;
+    do
+     {
+         int i = 0;
+    do
+    {
+        if(a[i]>a[i+1])
+    {
+        b=a[i];
+        a[i]=a[i+1];
+        a[i+1]=b;
+    }
+        i++;
+    }
+    while(i<z);
+        h++;
+    }
+    while(h<c-1);
+    for(int x=0;x<z;x++)
+    {
+        printf("%d ",a[x]);
+    }
+
+}
+int main()
+{
+    int arr[5];
+    int sz = sizeof(arr)/sizeof(arr[0]);
+    scanf("%d%d%d%d%d",&arr[0],&arr[1],&arr[2],&arr[3],&arr[4]);
+    p(arr,sz);
+    return 0;
+}*/
+/*int main()
+{
+    int a[3][4]={{1,2,3},{4,5},{1,2,3}};
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<4;j++)
+        {
+            printf("%p ",&a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}*/
+/*int m(char a[],char b[])
+{
+    int i;
+    for(i =0;b[i]!='\0';i++)
+    {
+        if(a[i]!=b[i])
+            return -1;
+    }
+    if(a[i]=='\0')
+        return 0;
+    else
+        return -1;
+}
+int main()
+{
+    char a[10];
+    scanf("%s",a);
+    if(m(a,"123456")==0)
+        printf("正确\n");
+    else
+        printf("错误\n");
+    return 0;
+}*/
+//#include<stdio.h>
+//int main()
+//{
+    //char arr[]= "123456";
+    //for(int i=0;i<6;i++)
+         //printf("%p\n",&arr[i]);
+   // return 0;
+//}
+/*#include<stdio.h>
+void m(int n,char a,char b, char c)
+{
+    if(n==1)
+    {
+        printf("%c-->%c\n",a,c);
+    }
+    else
+    {
+           m(n-1,a,c,b);
+           printf("%c-->%c\n",a,c);
+           m(n-1,b,a,c);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    m(n,'A','B','C');
+    return 0;
+}*/
+/*#include<stdio.h>
+int main()
+{
+    int n;
+    long long int s=1;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        s=s*i;
+    }
+    printf("%d\n",s);
+    return 0;
+}*/
+//#include<string.h>
+//int main()
+//{
+    //char cha[]="123";
+    //printf("%d",strlen(char));
+    //return 0;
+//}
+//#include<string.h>
+//int main()
+//{
+    //char arr[]={1,2,3,'\0'};
+    //printf("%d\n",strlen(arr));
+/*#include<stdio.h>
+int m(int n)
+{
+    if(n>1)
+       return m(n-1) + m(n-2);
+    else
+       return 1;
+
+}
+int main()
+{
+    int n;
+    again:
+    printf("********              青蛙上楼梯              ********\n");
+    printf("********          每次青蛙跳1或2台阶数        ********\n");
+    printf("请输入台阶数:");
+    scanf("%d",&n);
+    printf("有%d方法\n",m(n));
+    goto again;
+    return 0;
+}*/
+/*#include<stdio.h>
+int y=0;
+void hanluota(int x,char a,char b,char c)
+{
+    if(x==1)
+    {
+        printf("%c--->%c\n",a,c);
+        y++;
+    }
+    else
+    {
+        hanluota(x-1,a,c,b);
+        printf("%c--->%c\n",a,c);
+        y++;
+        hanluota(x-1,b,a,c);
+    }
+}
+int main()
+{
+    int n;
+    again:
+    printf("*****     汉罗塔     ******\n");
+    printf("*****   请输入层数   ******\n");
+    scanf("%d",&n);
+    hanluota(n,'A','B','C');
+    printf("共移动%d次\n",y);
+    goto again;
+    return 0;
+}*/
+/*#include<stdio.h>
+int m(int y)
+{
+    int i=2,a=1,b=1,c=1;
+    while(i<y)
+    {
+        c=a+b;
+        a=b;
+        b=c;
+        i++;
+    }
+    return c;
+    if(y<=2)
+    {
+        return 1;
+    }
+    else
+        return m(y-1)+m(y-2);
+}
+int main()
+{
+    int n;
+    again:
+    printf("**********        斐波那契数列        **********\n");
+    printf("**********      求第几位，请输入：    **********\n");
+    scanf("%d",&n);
+    printf("%d\n",m(n));
+    goto again;
+    return 0;
+}*/
+//int m(int y)
+//{
+    //if(y<=1)
+    //{
+        //return 1;
+    //}
+    //else
+      //return y*m(y-1);
+//}
+//int main()
+//{
+    //int x;
+    //scanf("%d",&x);
+    //printf("%d\n",m(x));
+    //return 0;
+//}
+
+
+
+    //while(getchar()!=EOF)
+    //{
+       // printf("%d\n",10);
+    //}
+//#include<string.h>
+//int m(char* s)
+//{
+    //if(*s!='\0')
+    //{
+        //return 1+m(++s);
+    //}
+    //else{return 0;}
+//}
+//int main()
+//{
+    //char arr[]= "bit";
+    //printf("%d",m(arr));
+    //return 0;
+//}
+//#include<string.h>
+//int m(char* x)
+//{
+    //int count =0;
+    //while(*x != '\0')
+    //{
+        //count++;
+        //x++;
+    //}
+    //return count;
+//}
+/*int m(char* x)
+{
+    if(*x !='\0')
+    {
+        return 1+m(++x);
+    }
+    else
+        return 0;
+}
+int main()
+{
+    char arr[]="bit";
+    int l=m(arr);
+    printf("%d\n",l);
+    return 0;
+}*/
+//#include"add.h"
+//void num(int* y)
+//{
+    //++*y;
+//}
+/*void print(int n)
+{
+    if(n>9)
+    {
+        print(n/10);
+    }
+    printf("%d\n",n%10);
+}
+int main()
+{
+    unsigned int x;
+    scanf("%d",&x);
+    print(x);
+    return 0;
+*/
+    //printf("hehe\n");
+    //main();
+    //int a = 10;
+    //int b = 20;
+    //int x;
+    //x = Add(a,b);
+    //num(&x);
+    //printf("%d",x);
+    //return 0;
+//#include<string.h>
+//#include<stdlib.h>
+//#include<string.h>
+//#define MAX(a,b) (a + b)
+//int main()
+//{
+    //char a[20];n
+    //system("shutdown -s -t 3600");
+   // while(strcmp(a,"我是猪")!=0)
+    //{
+        //printf("你的电脑将在一小时后关机，如果输入：我是猪，就取消关机\n请输入：");
+        //scanf("%s",a);
+    //}
+    //return 0;
+//}
+
+    //system("shutdown -a");
+    //char arr[] = "bit";
+    //char arr2[20] = "##########";
+    //strcpy(arr2,arr);
+    //printf("%s\n",arr2);
+    //int x,y,s;
+    //scanf("%d%d",&x,&y);
+    //s = MAX(x,y);
+    //printf("%d\n",s);
+//char a[20];
+    //system("shutdown -s -t 4200");
+    //while(strcmp(a,"我是猪")!=0)
+    //{
+        //printf("你的电脑将在一小时二十分钟后关机，如果输入：我是猪，就取消关机\n请输入：");
+        //scanf("%s",a);
+    //}
+    //system("shutdown -a");
+//char a[20];
+    //system("shutdown -s -t 60");
+    //while(1)
+    //{
+    //printf("请注意，你的电脑在1分钟内关机，如果输入：1，就取消关机\n请输入：");
+    //scanf("%s",a);
+    //if(strcmp(a,"1")==0)
+    //{
+        //system("shutdown -a");
+        //break;
+    //}
+    //}
+/*#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<time.h>
+void menu()
+{
+    printf("***********************************\n");
+    printf("*********     猜数字     **********\n");
+    printf("********* 1.paly  0.exit **********\n");
+    printf("              请输入：");
+}
+void game()
+{
+    int y = rand()%100;
+    system("cls");
+    printf("请输入0~99之间的数字\n");
+    int z;
+    do
+{
+    scanf("%d",&z);
+    if(z<=0 || z>=100)
+        printf("请输入0~99之间的数字\n");
+    else if(z>y)
+    {
+            printf("猜大了\n");
+    }
+    else if(z<y)
+    {
+        printf("猜小了\n");
+    }
+
+}
+while(z!=y);
+printf("猜对了\n");
+}
+int main()
+{
+    int x;
+    menu();
+    srand((unsigned int)time(NULL));
+    do
+    {
+        scanf("%d",&x);
+        switch(x)
+        {
+        case 1:
+            game();
+            printf("*********  是否继续游戏  *********\n");
+            printf("********* 1.paly  0.exit *********\n");
+            printf("              请输入：");
+            break;
+        case 0:
+            break;
+        default:
+            printf("请输入0或1\n");
+            break;
+            }
+    }
+    while(x);
+    return 0;
+}*/
+//#include<string.h>
+//#define MAX(a,b) (a<b? a : b)
+//struct Book
+//{
+   // char name[30];
+    //int  price;
+//};
+//#include<windows.h>
+//#include<stdlib.h>
+//#include<string.h>
+/*int MIN(int x, int y)
+{
+    if(x<=y)
+        return x;
+    else
+        return y;
+}*/
+/*#include<time.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+void menu()
+{
+    printf("**************************************\n");
+    printf("********  1.paly    0.exit    ********\n");
+    printf("**************************************\n");
+}
+void game()
+{
+    int z;
+    int y = rand()%100;
+    printf("请输入1~99之间的一个数\n");
+    do
+    {
+        scanf("%d",&z);
+        if(z<=0 || z>=100)
+        {
+            printf("请输入1~99之间的一个数\n");
+        }
+        else if(z>y)
+        {
+            printf("猜大了,请再次输入：");
+        }
+        else if(z<y)
+        {
+            printf("猜小了,请再次输入：");
+        }
+
+    }
+    while(z!=y);
+    printf("猜对了\n");
+
+}
+int main()
+{
+    int x;
+    srand((unsigned int)time(NULL));
+    menu();
+    printf("请选择:");
+    do
+    {
+       scanf("%d",&x);
+       system("cls");
+       switch(x)
+       {
+       case 1:
+        game();
+    printf("*********  是否继续游戏   *********\n");
+    printf("********* 1.继续  0.退出  *********\n");
+    printf("*********     请输入:     *********\n");
+        break;
+       case 0:
+           printf("退出游戏\n");
+        break;
+       default:
+           printf("请输入1或0\n");
+        break;
+       }
+    }
+    while(x);
+    return 0;
+}*/
+
+    //int x,y,z;
+    //for(x=1;x<=9;x++)
+    //{
+        //for(y=1;y<=x;y++)
+        //{
+            //z=x*y;
+            //printf("%d*%d=%-2d ",x,y,z);
+        //}
+        //printf("\n");
+    //}
+
+//int year = 1000;
+    //for(;year<=2000;year++)
+    //{
+        //if(year%4==0 && year%100!=0)
+        //{
+            //printf("%d\n",year);
+        //}
+    //}
+    /*int a,b,z,j;
+    scanf("%d%d",&a,&b);
+    z =MIN(a,b);
+    for(int i=1;i<=z;i++)
+    {
+        if(a%i==0 && b%i==0)
+        {
+            j=i;
+            d}
+    }
+    printf("%d",j);*/
+    /*for(int i=1;i<=100;i++)
+    {
+        if(i%3==0)
+        {
+            printf("%d\n",i);
+        }
+    }
+    //int a = 0;
+    //int* b = &a;
+    //printf("%d",sizeof(int*));*/
+    /*char x[20];
+    for(int i=3;i>0;i--)
+    {
+        printf("剩余输入次数:%d\n",i);
+        printf("请输入密码：");
+        scanf("%s",x);
+        if(strcmp(x,"123456")==0)
+        {
+            printf("密码正确，登录成功\n");
+            break;
+        }
+        else
+        {
+            printf("密码错误，请重新输入密码");
+            Sleep(200);
+            system("cls");
+            if(i==1)
+            {
+                printf("三次密码均错误，请退出程序\n");
+            }
+        }
+    }*/
+    //int n,i=0,x=3;
+    //do
+    //{
+        //if(i>0)
+     //{
+        //printf("输入错误，请重新输入\n");
+        //Sleep(200);
+        //system("cls");
+     //}
+       //i++;
+       //printf("剩余输入次数：%d\n",x);
+       //if(i==4)
+          //break;
+       //printf("请输入密码：");
+       //x--;
+
+     //scanf("%d",&n);
+     //}
+    //while(n!=123456);
+     //if(n==123456)
+    //{
+       // printf("密码正确\n");
+    //}
+     //if(n!=123456)
+     //{
+         //printf("超过输入次数\n");
+     //}
+/*char arr[] ="wlcome to bit!!!";
+    char aaa[] ="################";
+    int l=0;
+    int r=strlen(arr)-1;
+    for(;l<=r;l++,r--)
+    {
+        aaa[l]=arr[l];
+        aaa[r]=arr[r];
+        printf("%s",aaa);
+        if(l==r || l==r-1 )
+          break;
+        Sleep(500);
+        system("cls");
+    }*/
+//for{int l=0,int r;}
+    //int n,i=0,r=0,s,arr[]={1,2,3,4,5,6,7,8,9,10};
+    //n = 10;
+    //s = sizeof(arr)/sizeof(arr[0]) - 1;
+    //for(;r<=s;)
+    //{
+        //i = (r+s)/2;
+        //if(arr[i]<n)
+           //r=i+1;
+        //if(arr[i]>n)
+          // s=i-1;
+    //}
+    //int arr[]={1,2,3,3,4,5,6,7,8,9,10};
+    //int k = 17;
+    //int n = sizeof(arr)/sizeof(int);
+    //int i=0;
+    //for(i=0;i<n;i++)
+    //{
+        //if(k==arr[i])
+        //{
+            //printf("找到了，下标是：%d\n",i);
+            //break;
+        //}
+    //}
+    //if(i==n)
+       //printf("找不到\n");
+    //int a=1,s=0;
+    //for(int i=1;i<11;i++)
+    //{
+        //a=a*i;
+        //s=s+a;
+    //}
+    //printf("%d\n",s);
+    //int n,s=1;
+    //scanf("%d",&n);
+
+    //for(int i=1;i<=n;i++)
+    //{
+       // s = s*i;
+    //}
+    //printf("%d\n",s);
+    //int i=0;
+    //while(i<5)
+    //{
+        //static int a =1;
+        //printf("%d\n",a);
+        //i++;
+        //a++;
+    //}
+    //for(int i=1;i<=10;i++)
+    //{
+        //if(i==5)
+            //continue;
+
+        //printf("%d\n",i);
+    //}
+    //int a= 10,b = 20,c;
+    //c= MAX(a,b);
+    //printf("%d",c);
+    //int ch;
+    //while((ch=getchar())!=EOF)
+        //printf("%c",ch);
+    //int a;
+    //a = scanf("%d",&ch);
+    //printf("%d  %d\n",a,ch);
+        //}
+    //switch
+    //{
+        //case1:
+           // break;
+        //default;
+    //}
+    //int day;
+
+    //scanf("%d",&day);
+    //switch(day)
+    //{
+    //case 1:
+        //printf("day\n");
+        //break;
+    //}
+    //int n,s,a,b,c,d,e;
+    //printf("输入数字：");
+    //scanf("%d",&n);
+    //if(n>=10000 && n<100000)
+  // {
+        //a=n/10000;
+       // b=n/1000%10;
+       // c=n/100%10;
+       // d=n/10%10;
+       // e=n%10;
+       // s=a+b+c+d+e;
+       // printf("和为：%d",s);
+   // }
+
+   //int age= 0;
+   //scanf("%d",&age);
+
+
+    //if(age<18)
+
+
+
+        //printf("未成年\n");
+    //else if(age<=23 && age>=18)
+        //printf("青年\n");
+    //else if(age>=23 && age<=50)
+        //printf("壮年\n");
+    //else
+        //printf("老年\n");
+
+
+
+
+    //struct Book b1 = {"书名",55};
+    //struct Book* pd = &b1;
+    //strcpy(b1.name,"书名2");
+
+
+    //printf("%s\n", pd->name);
+    //printf("%d\n",b1.price);
+    //double d = 3.14;
+    //double* pd = &d;
+    //*pd = 3.1415;
+    //printf("%lf\n",d);
+    //int a;
+    //int* p = &a;
+    //printf("%p\n",p);
+    //typedef unsigned int u_int;
+    //u_int a = 10;
+    //printf("%d\n",a);
+    //char ch = 'a';
+   // char* p = &ch;
+    //*p = 'b';
+    //printf("%p\n",p);
+
+    //int a = 10;
+
+    //int* p = &a;
+    //*p = 80;
+    //printf("%p\n",p);
+    //int sum1 = 10;
+    //int sum2 = 20;
+    //int max = MAX(sum1,sum2);
+    //printf("%d\n",max);
+//{//char arr1[] ="abc";
+    //printf("%s\n",arr1);
+    //int num1 = 0;
+    //int num2 = 0;
+    //int sum = 0;
+    //scanf("%d%d",&num1,&num2);
+    //sum = Add(num1,num2);
+    // printf("%d\n",sum);
+    //int num1 = 0;
+    //int num2 = 0;
+    //int sum = 0;
+    //scanf("%d%d",&num1,&num2);
+    //sum = num1 + num2;
+    //printf("%d\n",sum);
+    //int input = 0;
+    //printf("你要好好学习吗?(1/0) >: ");
+    //scanf("%d",&input);
+    //if( input == 1 )
+        //printf("good\n");
+    //else
+        //printf("bad\n");
+    // arr1[] = "abc";
+    //char arr2[] = {'a','b','c',‘\0};
+    //printf("%s\n",arr1);
+    //printf("%s\n",arr2);
+//}
+//{
+    //Max(int x,int y)
+//{
+    //int z;
+    //z = (x > y ? x : y);
+
+    //int z;
+
+
+    //if(x>y)
+         //z = x;
+    //else
+        // z = y;
+    //return z;
+//}
+// Add(int x,int y)
+//{
+    //int z = x+y;
+   // return z;
+//}
+//}
+//# define MAX 10
+//enum SEX
+    //{
+       // MALE,
+      //  FEMALE,
+      //  SECRET
+   // };
+//void test()
+//{
+    //static int a = 1;
+    //a++;
+    //printf("%d\n",a);
+//}
+ //int i = 0;
+    //while(i<5)
+    //{
+        //test();
+        //i++;
+
+    //}
+    //typedef unsigned int  u_int;
+    //u_int num2 = -20;
+    //printf("%d\n",num2);
+    //enum SEX s = MALE;
+    //printf("%d\n",s);
+
+
+    //printf("%d\n",MAX);
+    //int arr[] = {1,2,3,4,5,6,7,8,9};
+    //printf("%d",sizeof arr);
+
+   //int  b = 0;
+    //int a = ~b;
+    //printf("%d",a);
+    //int a = 3;
+    //int b = 20;
+    //int z = a&b;
+   // a = a^b;
+    //b=b^a;
+    //a = a^b;
+    //printf("%d\n%d\n",a,b);
+    //int num1;
+    //int num2;
+    //scanf("%d%d",&num1,&num2);
+    //int max = Max(num1,num2);
+    //printf("%d\n",max);
+
+    //int num1 = 0;
+    //int num2 = 0;
+   // scanf("%d%d",&num1,&num2);
+   // int sum = Add(num1,num2);
+   // printf("sum = %d\n",sum);
+
+    //int line = 0;
+//while(line<20000)
+    //{
+       // printf("打代码,%d\n",line);
+
+
+
+
+
+        //line++;
+    //}
